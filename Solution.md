@@ -14,7 +14,18 @@ A	|76
 B	|74
 C	|36
 
-3. How many days has each customer visited the restaurant?
+-- How many days has each customer visited the restaurant?
+```sql
+SELECT customer_id as customer, count(distinct order_date) as num_days
+FROM sales 
+GROUP BY customer_id
+```
+|customer	|num_days|
+|----|-----------|
+A	|4
+B	|6
+C	|2
+
 4. What was the first item from the menu purchased by each customer?
 5. What is the most purchased item on the menu and how many times was it purchased by all customers?
 6. Which item was the most popular for each customer?
