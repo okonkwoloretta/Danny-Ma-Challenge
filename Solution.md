@@ -62,9 +62,41 @@ ORDER BY num_item_pur DESC
 |-----------|-----------|
 ramen	|8
 
+-- Which item was the most popular for each customer?
+```sql
+WITH purchase_counts AS (
+  SELECT
+    customer_id,
+    m.product_name AS item,
+    COUNT(*) AS purchase_count,
+    ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY COUNT(*) DESC) AS rn
+  FROM
+    sales s
+  INNER JOIN
+    menu m ON s.product_id = m.product_id
+  GROUP BY
+    customer_id, m.product_name
+)
+SELECT
+  customer_id,
+  item AS most_popular_item,
+  purchase_count
+FROM
+  purchase_counts
+WHERE
+  rn = 1
+  ```
+  
+|customer_id	|most_popular_item	|purchase_count|
+|-----------|-----------|-----------|
+|A	|ramen	|3
+|B	|sushi	|2
+|C	|ramen	|3
 
 
-6. Which item was the most popular for each customer?
+
+
+
 7. Which item was purchased first by the customer after they became a member?
 8. Which item was purchased just before the customer became a member?
 9. What is the total items and amount spent for each member before they became a member?
