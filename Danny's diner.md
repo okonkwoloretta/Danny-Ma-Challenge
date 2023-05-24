@@ -12,7 +12,12 @@ He plans on using these insights to help him decide whether he should expand the
 # Dataset
 Danny has shared 3 key datasets for this case study:
 
-- sales: which captures when and what items were ordered, consist of the customer _id,
-- menu: whhich
-members
-You can inspect the entity relationship diagram and example data below.
+- Sales: The sales table records individual customer purchases, including the corresponding order date and product ID, providing information on when and which menu items were ordered.
+
+- Menu: The menu table establishes a connection between the product ID and the specific product name and price of each menu item.
+
+- Members: The members table stores data on customer IDs and their respective join dates for the beta version of the Danny's Diner loyalty program
+
+# Entity Relationship Diagram
+
+![1 (2)](https://github.com/okonkwoloretta/Danny-Ma-Challenge/assets/116097143/4ed9baa3-071d-4b22-b6f3-0767872e2c8d)
