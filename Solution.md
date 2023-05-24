@@ -94,10 +94,48 @@ WHERE
 |C	|ramen	|3
 
 
+-- Which item was purchased first by the customer after they became a member?
+```sql
+WITH first_purchase AS (
+  SELECT customer_id, MIN(order_date) AS first_purchase_date
+  FROM sales
+  GROUP BY customer_id
+),
+
+member_first_purchase AS (
+  SELECT s.customer_id, MIN(s.order_date) AS member_first_purchase_date
+  FROM sales s
+  INNER JOIN members m 
+  ON s.customer_id = m.customer_id
+  GROUP BY s.customer_id
+)
+
+SELECT
+  f.customer_id,
+  m.product_name AS first_item_after_membership
+FROM
+  member_first_purchase mfp
+INNER JOIN first_purchase f 
+  ON mfp.customer_id = f.customer_id
+INNER JOIN sales s 
+  ON f.customer_id = s.customer_id 
+  AND f.first_purchase_date < s.order_date
+INNER JOIN menu m 
+  ON s.product_id = m.product_id
+WHERE s.order_date = (
+                      SELECT MIN(order_date)
+                      FROM sales
+                      WHERE customer_id = f.customer_id
+                      AND order_date > mfp.member_first_purchase_date
+                      )
+```
+
+|customer_id	|first_item_after_membership|
+|-----------|-----------|
+|A	|curry
+|B	|curry
 
 
-
-7. Which item was purchased first by the customer after they became a member?
 8. Which item was purchased just before the customer became a member?
 9. What is the total items and amount spent for each member before they became a member?
 10. If each $1 spent equates to 10 points and sushi has a 2x points multiplier - how many points would each customer have?
