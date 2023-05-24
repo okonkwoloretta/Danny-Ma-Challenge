@@ -26,8 +26,44 @@ A	|4
 B	|6
 C	|2
 
-4. What was the first item from the menu purchased by each customer?
-5. What is the most purchased item on the menu and how many times was it purchased by all customers?
+-- What was the first item from the menu purchased by each customer?
+```sql
+WITH first_pur as (
+select customer_id, min(order_date) as first_pur_date
+from sales
+group by customer_id)
+
+SELECT DISTINCT f.customer_id as customer, f.first_pur_date, m.product_name as first_item
+FROM first_pur f
+INNER JOIN sales s
+ON f.customer_id = s.customer_id
+AND f.first_pur_date = s.order_date
+INNER JOIN menu m
+ON s.product_id = m.product_id
+ORDER BY f.first_pur_date
+```
+|customer	|first_pur_date	|first_item|
+|----|-----------|-----------|
+A	|2021-01-01	|curry
+A	|2021-01-01	|sushi
+B	|2021-01-01	|curry
+C	|2021-01-01	|ramen
+
+-- What is the most purchased item on the menu and how many times was it purchased by all customers?
+```sql
+SELECT TOP (1) product_name, count(*) as num_item_pur 
+FROM sales s
+INNER JOIN menu m
+ON s.product_id = m.product_id
+GROUP BY product_name
+ORDER BY num_item_pur DESC
+```
+|product_name	|num_item_pur|
+|-----------|-----------|
+ramen	|8
+
+
+
 6. Which item was the most popular for each customer?
 7. Which item was purchased first by the customer after they became a member?
 8. Which item was purchased just before the customer became a member?
