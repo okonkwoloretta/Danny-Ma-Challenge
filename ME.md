@@ -1,3 +1,5 @@
+![1 (2)](https://github.com/okonkwoloretta/Danny-Ma-Challenge/assets/116097143/4ffb41d9-8a73-4c59-b26e-4515f10b91f5)
+
 
 # Introduction
 Danny seriously loves Japanese food so in the beginning of 2021, he decides to embark upon a risky venture and opens up a cute little restaurant that sells his 3 favourite foods: sushi, curry and ramen.
@@ -20,4 +22,4 @@ Danny has shared 3 key datasets for this case study:
 
 # Entity Relationship Diagram
 
-![1 (2)](https://github.com/okonkwoloretta/Danny-Ma-Challenge/assets/116097143/4ed9baa3-071d-4b22-b6f3-0767872e2c8d)
+![Danny's Diner](https://github.com/okonkwoloretta/Danny-Ma-Challenge/assets/116097143/1cc9b1b7-d466-435c-aa0a-7f36eeb07f8d)
