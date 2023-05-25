@@ -241,4 +241,4 @@ ORDER BY customer
 |customer	|member_points|
 |-----------|-----------|
 A	|1370
-B	820
+B	|820
