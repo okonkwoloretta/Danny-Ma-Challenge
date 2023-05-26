@@ -26,8 +26,20 @@ Danny has shared 3 key datasets for this case study:
 
 # [Case Study Questions/Answers](https://github.com/okonkwoloretta/Danny-diner-case-study-1/blob/main/Solution.md)
 
-# Bonus Questions
+
 
 ## [Join All The Things](https://github.com/okonkwoloretta/Danny-diner-case-study-1/blob/main/join%20all%20things.md)
 
 ## [Rank All The Things](https://github.com/okonkwoloretta/Danny-diner-case-study-1/blob/main/rank.md)
+
+
+
+## Bonus 
+
+<details>
+<summary>Bonus Question</summary>
+
+- [Join All The Things](https://github.com/okonkwoloretta/Danny-diner-case-study-1/blob/main/join%20all%20things.md)
+- [Rank All The Things](https://github.com/okonkwoloretta/Danny-diner-case-study-1/blob/main/rank.md)
+
+</details>
