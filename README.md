@@ -23,18 +23,15 @@ Danny has shared 3 key datasets for this case study:
 # Entity Relationship Diagram
 
 ![Danny's Diner](https://github.com/okonkwoloretta/Danny-Ma-Challenge/assets/116097143/1cc9b1b7-d466-435c-aa0a-7f36eeb07f8d)
+ 
 
-# [Case Study Questions/Answers](https://github.com/okonkwoloretta/Danny-diner-case-study-1/blob/main/Solution.md)
+<details>
+<summary>Case Study</summary>
+  
+- [Case Study Questions/Answers](https://github.com/okonkwoloretta/Danny-diner-case-study-1/blob/main/Solution.md)
+  
+</details>
 
-
-
-## [Join All The Things](https://github.com/okonkwoloretta/Danny-diner-case-study-1/blob/main/join%20all%20things.md)
-
-## [Rank All The Things](https://github.com/okonkwoloretta/Danny-diner-case-study-1/blob/main/rank.md)
-
-
-
-## Bonus 
 
 <details>
 <summary>Bonus Question</summary>
